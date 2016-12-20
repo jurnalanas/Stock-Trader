@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div class="container">
     <app-header></app-header>
     <div class="row">
@@ -13,6 +13,9 @@
   export default {
     components: {
       appHeader: Header
+    },
+    created () {
+      this.$store.dispatch('initStocks')
     }
   }
 </script>
