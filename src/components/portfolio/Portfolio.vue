@@ -1,17 +1,18 @@
 <template>
   <div>
-    <app-stock v-for="stock in stocks" :stock="stock"></app-stock>
+    <app-stock v-for="stock in stockPortfolio" :stock="stock"></app-stock>
   </div>
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
   import Stock from './Stock.vue'
 
   export default {
     computed: {
-      stocks () {
-        return this.$store.getters.stockPortfolio
-      }
+      ...mapGetters([
+        'stockPortfolio'
+      ])
     },
     components: {
       appStock: Stock
