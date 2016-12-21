@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-stock v-for="stock in stockPortfolio" :stock="stock"></app-stock>
+    <app-stock v-for="stock in stocks" :stock="stock"></app-stock>
   </div>
 </template>
 
@@ -10,9 +10,9 @@
 
   export default {
     computed: {
-      ...mapGetters([
-        'stockPortfolio'
-      ])
+      ...mapGetters({
+        stocks: 'stockPortfolio'
+      })
     },
     components: {
       appStock: Stock
